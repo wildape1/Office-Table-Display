@@ -113,7 +113,7 @@ def updatefile():
   file=file.replace("<td>None</td>","<td></td>")
 
   refreshHtml = """ 
-  <head>~
+  <head>
     <meta http-equiv="refresh" content="{}">
   </head> """.format(refreshTime)
   with open("activetemp.html", "w") as file_to_write:
