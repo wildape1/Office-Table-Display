@@ -56,7 +56,7 @@ def updatefile():
   engineerNames = active_df["ENGINEER"].drop_duplicates()
   #print(engineerNames)
 
-  open("active.html","w").close()
+  open("activetemp.html","w").close()
 
 
   active_df_format = pd.DataFrame()
@@ -70,25 +70,38 @@ def updatefile():
       temp_df = temp_df.drop(columns=["index","ENGINEER"])
       temp_df.to_html("temp.html",index=False)
 
-      engineerName = "<h2>Engineer: {} <h2>".format(value)
+      engineerName = "<h2>- {} -<h2>".format(value)
 
       with open("temp.html") as temp_file:
         temp_file = temp_file.read()
 
-      with open("active.html") as file:
+      with open("activetemp.html") as file:
         file = file.read()
 
-      with open("active.html", "w") as file_to_write:
+      with open("activetemp.html", "w") as file_to_write:
         file_to_write.write(file + engineerName + temp_file)
       #print(value)
       #print(temp_df)
       #print()
 
+  inactive_df = inactive_df.drop(columns=["ENGINEER","PROGRESS DATE","SEAL DATE"])
+  inactive_df.to_html("inactive.html",index=False)
+
+  with open("inactive.html") as inactive_file:
+    inactive_file = inactive_file.read()
+
+  with open("activetemp.html") as file:
+    file = file.read()
+
+  html = "<h2> NOT IN YET <h2>"
+
+  with open("activetemp.html", "w") as file_to_write:
+    file_to_write.write(file + html + inactive_file)
 
   #print(active_df_format)
   #print(inactive_df)
 
-  with open("active.html") as file:
+  with open("activetemp.html") as file:
       file = file.read()
 
   file=file.replace("<table ", "<table class='rwd-table'")
@@ -99,17 +112,23 @@ def updatefile():
   file=file.replace("<th>SEAL DATE</th>", "<th style='width:15%;'>SEAL DATE</th>")
   file=file.replace("<td>None</td>","<td></td>")
 
-  html = """ 
+  refreshHtml = """ 
   <head>~
     <meta http-equiv="refresh" content="{}">
   </head> """.format(refreshTime)
-  with open("active.html", "w") as file_to_write:
-      file_to_write.write(cssFormat.html2 + html + file)
+  with open("activetemp.html", "w") as file_to_write:
+      file_to_write.write(cssFormat.html2 + file)
       #file_to_write.write(html + file)
 
+  with open("activetemp.html") as file:
+      file = file.read()
+
+  with open("active.html", "w") as file_2_write:
+      file_2_write.write(file + refreshHtml)
 
 
-os.startfile("active.html")
+
+#os.startfile("active.html")
 
 
 while(1):
