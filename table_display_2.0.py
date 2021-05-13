@@ -100,7 +100,7 @@ def updatefile():
   file=file.replace("<td>None</td>","<td></td>")
 
   html = """ 
-  <head>
+  <head>~
     <meta http-equiv="refresh" content="{}">
   </head> """.format(refreshTime)
   with open("active.html", "w") as file_to_write:
