@@ -122,8 +122,8 @@ h2 {
 .rwd-table th, .rwd-table td {
     text-align: left;
     border: none; 
-    font-size: 2em;
-    padding: 15px;
+    font-size: 2.5em;
+    padding: 10px;
 }
 
 .rwd-table th {
