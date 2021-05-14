@@ -134,5 +134,5 @@ def updatefile():
 while(1):
   main()
   updatefile()
-  print("update")
+  #print("update")
   time.sleep(10)

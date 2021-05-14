@@ -87,6 +87,8 @@ h1 {
 html2 = """<style>
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
 .rwd-table {
+  margin: 0px;
+  padding: 0px;
   min-width: 1500px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   border-collapse: collapse;
@@ -105,6 +107,8 @@ h2 {
   font-weight: bold;
   letter-spacing: 1px;
   color: #EEFBFB;
+  margin: 0px;
+  padding: 0px;
   font-size: 2em;
 }
  
