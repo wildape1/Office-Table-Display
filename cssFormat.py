@@ -102,16 +102,22 @@ html2 = """<style>
  
  
 h2 {
-  font-weight: normal;
+  font-weight: bold;
   letter-spacing: 1px;
   color: #EEFBFB;
+  font-size: 2em;
 }
  
 .rwd-table tr {
+  border-bottom: 1px solid #4DA8DA;
 }
+.rwd-table tr:last-child {
+  border-bottom: 1px solid black;
+}
+
 .rwd-table th, .rwd-table td {
     text-align: left;
-    border: none;
+    border: none; 
     font-size: 2em;
     padding: 15px;
 }
@@ -128,7 +134,7 @@ body {
 	background: linear-gradient(45deg, #12232E, #4DA8DA);
 	font-family: sans-serif;
 	font-weight: 100;
-    font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 </style>

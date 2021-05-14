@@ -16,16 +16,22 @@
  
  
 h2 {
-  font-weight: normal;
+  font-weight: bold;
   letter-spacing: 1px;
   color: #EEFBFB;
+  font-size: 2em;
 }
  
 .rwd-table tr {
+  border-bottom: 1px solid #4DA8DA;
 }
+.rwd-table tr:last-child {
+  border-bottom: 1px solid black;
+}
+
 .rwd-table th, .rwd-table td {
     text-align: left;
-    border: none;
+    border: none; 
     font-size: 2em;
     padding: 15px;
 }
@@ -42,7 +48,7 @@ body {
 	background: linear-gradient(45deg, #12232E, #4DA8DA);
 	font-family: sans-serif;
 	font-weight: 100;
-    font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 </style>
@@ -53,7 +59,30 @@ body {
   if (document.location.search.match(/type=embed/gi)) {
     window.parent.postMessage("resize", "*");
   }
-</script><h2>- GS -<h2><table class='rwd-table'border="1" class="dataframe">
+</script><h2>- ERIC -<h2><table class='rwd-table'border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th style='width:15%;'>JOB #</th>
+      <th style='width:50%;'>NAME</th>
+      <th style='width:15%;'>PROGRESS DATE</th>
+      <th style='width:15%;'>SEAL DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>21-083</td>
+      <td>Austin Johnson RES</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>21-089</td>
+      <td>Synergis Folding Partition</td>
+      <td>5/5</td>
+      <td>5/5</td>
+    </tr>
+  </tbody>
+</table><h2>- GREG -<h2><table class='rwd-table'border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th style='width:15%;'>JOB #</th>
@@ -142,7 +171,7 @@ body {
       <td></td>
     </tr>
   </tbody>
-</table><h2>- JM -<h2><table class='rwd-table'border="1" class="dataframe">
+</table><h2>- JAMES -<h2><table class='rwd-table'border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th style='width:15%;'>JOB #</th>
@@ -189,7 +218,7 @@ body {
       <td>ASAP</td>
     </tr>
   </tbody>
-</table><h2>- JT -<h2><table class='rwd-table'border="1" class="dataframe">
+</table><h2>- JOEL -<h2><table class='rwd-table'border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th style='width:15%;'>JOB #</th>
@@ -218,7 +247,7 @@ body {
       <td></td>
     </tr>
   </tbody>
-</table><h2>- MW -<h2><table class='rwd-table'border="1" class="dataframe">
+</table><h2>- MIKE -<h2><table class='rwd-table'border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th style='width:15%;'>JOB #</th>
@@ -239,29 +268,6 @@ body {
       <td>Stryker TI</td>
       <td></td>
       <td></td>
-    </tr>
-  </tbody>
-</table><h2>- MW/EW -<h2><table class='rwd-table'border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th style='width:15%;'>JOB #</th>
-      <th style='width:50%;'>NAME</th>
-      <th style='width:15%;'>PROGRESS DATE</th>
-      <th style='width:15%;'>SEAL DATE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>21-083</td>
-      <td>Austin Johnson RES</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>21-089</td>
-      <td>Synergis Folding Partition</td>
-      <td>5/5</td>
-      <td>5/5</td>
     </tr>
   </tbody>
 </table><h2> NOT IN YET <h2><table class='rwd-table'border="1" class="dataframe">
@@ -298,6 +304,6 @@ body {
     </tr>
   </tbody>
 </table> 
-  <head>~
+  <head>
     <meta http-equiv="refresh" content="10">
   </head> 
