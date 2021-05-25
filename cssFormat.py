@@ -2,7 +2,7 @@ html1 = """<style>
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
 .rwd-table {
   margin: 1em 0;
-  min-width: 1000px;
+  min-width: 100%;
 }
 .rwd-table tr {
   border-top: 1px solid #ddd;
@@ -155,6 +155,9 @@ html3 = """<style>
 html,
 body {
 	height: 100%;
+  width: 100%;
+  margin:0;
+  padding:0;
 }
 
 body {
@@ -172,7 +175,7 @@ body {
 }
 
 table {
-	width: 1000px;
+	width: 100%;
 	border-collapse: collapse;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);

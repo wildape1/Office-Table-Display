@@ -84,7 +84,7 @@ def updatefile():
       #print(temp_df)
       #print()
 
-  inactive_df = inactive_df.drop(columns=["ENGINEER","PROGRESS DATE","SEAL DATE"])
+  inactive_df = inactive_df.drop(columns=["ENGINEER","PROGRESS 1","PROGRESS 2","SEALED"])
   inactive_df.to_html("inactive.html",index=False)
 
   with open("inactive.html") as inactive_file:
@@ -105,11 +105,12 @@ def updatefile():
       file = file.read()
 
   file=file.replace("<table ", "<table class='rwd-table'")
-  file=file.replace("<th></th> ", "<th style='width:5%;'></th>")
-  file=file.replace("<th>JOB #</th>", "<th style='width:15%;'>JOB #</th>")
-  file=file.replace("<th>NAME</th>", "<th style='width:50%;'>NAME</th>")
-  file=file.replace("<th>PROGRESS DATE</th>", "<th style='width:15%;'>PROGRESS DATE</th>")
-  file=file.replace("<th>SEAL DATE</th>", "<th style='width:15%;'>SEAL DATE</th>")
+  file=file.replace("<th></th> ", "<th style='width:1%;'></th>")
+  file=file.replace("<th>JOB #</th>", "<th style='width:12%;'>JOB #</th>")
+  file=file.replace("<th>NAME</th>", "<th style='width:60%;'>NAME</th>")
+  file=file.replace("<th>PROGRESS 1</th>", "<th style='width:12%;'>PROG 1</th>")
+  file=file.replace("<th>PROGRESS 2</th>", "<th style='width:12%;'>PROG 2</th>")
+  file=file.replace("<th>SEALED</th>", "<th style='width:10%;'>SEALED</th>")
   file=file.replace("<td>None</td>","<td></td>")
 
   refreshHtml = """ 
