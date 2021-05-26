@@ -6,7 +6,7 @@ import os, time
 import pickle
 import cssFormat
 
-refreshTime = 10
+refreshTime = 30
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # here enter the id of your google sheet
@@ -136,4 +136,4 @@ while(1):
   main()
   updatefile()
   #print("update")
-  time.sleep(10)
+  time.sleep(30)
