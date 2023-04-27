@@ -50,6 +50,13 @@ def updatefile():
   active_df = df.iloc[:Not_In,:] #splits the dataframe into 2 
   inactive_df = df.iloc[Not_In+1:,:]
 
+  del inactive_df['ENGINEER']
+  del inactive_df['PROGRESS']
+  del inactive_df['SEALED']
+  
+  # print(active_df)
+  # print(inactive_df)
+
   active_df = active_df.dropna(subset = ["JOB #"])
   active_df = active_df.sort_values('ENGINEER')
 
@@ -60,7 +67,7 @@ def updatefile():
 
 
   active_df_format = pd.DataFrame()
-  for key, value in engineerNames.iteritems(): 
+  for key, value in engineerNames.items(): 
       temp_df = active_df[active_df['ENGINEER'] == value]
       temp_df = temp_df.sort_values('JOB #')
       active_df_format = pd.concat([active_df_format, temp_df], axis=0) 
@@ -84,19 +91,19 @@ def updatefile():
       #print(temp_df)
       #print()
 
-  #inactive_df = inactive_df.drop(columns=["ENGINEER","PROGRESS 1","PROGRESS 2","SEALED"])
-  #inactive_df.to_html("inactive.html",index=False)
+  inactive_df.to_html("inactive.html",index=False)
+  
 
-  #with open("inactive.html") as inactive_file:
-  #  inactive_file = inactive_file.read()
+  with open("inactive.html") as inactive_file:
+    inactive_file = inactive_file.read()
 
-  #with open("activetemp.html") as file:
-  #  file = file.read()
+  with open("activetemp.html") as file:
+    file = file.read()
 
-  #html = "<h2> NOT IN YET <h2>"
+  html = "<h2> NOT IN YET <h2>"
 
-  #with open("activetemp.html", "w") as file_to_write:
-  #  file_to_write.write(file + html + inactive_file)
+  with open("activetemp.html", "w") as file_to_write:
+    file_to_write.write(file + html + inactive_file)
 
   #print(active_df_format)
   #print(inactive_df)
@@ -118,22 +125,30 @@ def updatefile():
     <meta http-equiv="refresh" content="{}">
   </head> """.format(refreshTime)
   with open("activetemp.html", "w") as file_to_write:
-      file_to_write.write(cssFormat.html2 + file + refreshHtml)
+      file_to_write.write(cssFormat.html2 + file)
       #file_to_write.write(html + file)
 
   with open("activetemp.html") as file:
       file = file.read()
 
   with open("active.html", "w") as file_2_write:
-      file_2_write.write(file)
+      file_2_write.write(file + refreshHtml)
 
 
 
-#os.startfile("active.html")
+# os.startfile("active.html")
 
 
 while(1):
-  main()
-  updatefile()
+  try:
+    main()
+  except:
+    print("An exception occurred in Main()") 
+
+  try:
+     updatefile()
+  except:
+     print("An error has occured in updatefile")
+
   #print("update")
   time.sleep(30)
