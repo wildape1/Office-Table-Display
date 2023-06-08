@@ -150,5 +150,5 @@ while(1):
   except:
      print("An error has occured in updatefile")
 
-  #print("update")
+  print("update")
   time.sleep(30)
